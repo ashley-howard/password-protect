@@ -1,9 +1,11 @@
+```html
 <div id="password">
     <input id="password-text" type="text">
     <button id="password-btn" onclick="passwordSubmit()">Submit</button>
 </div>
+```
 
-<style type="text/css">
+```css
     #password {
         position: fixed;
         content: "In production, come back soon!";
@@ -18,10 +20,10 @@
         font-size: 5em;
         overflow: hidden
     }
-</style>
+```
 
-<script>
-    var devPass = localStorage.getItem('dev') ? localStorage.getItem('dev') : 'no';
+```javascript
+var devPass = localStorage.getItem('dev') ? localStorage.getItem('dev') : 'no';
 
     if (localStorage.getItem('dev') == 'yes') {
         document.getElementById('password').style.display = "none"
@@ -33,4 +35,4 @@
             localStorage.setItem('dev', 'yes');
         }
     }
-</script>
+```
