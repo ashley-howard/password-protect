@@ -1,9 +1,12 @@
+For when setting up your site and you want a simple temporary solution to hide your website.
+Bear in mind, this isn't at all secure, it's not encrypted, and is only for aesthetic purposes.
+
 ## HTML
 
 ``` html
-<div id="password">
-    <input id="password-text" type="text">
-    <button id="password-btn" onclick="passwordSubmit()">Submit</button>
+<div id="password-display">
+    <input id="password" type="text">
+    <button onclick="passwordSubmit()">Submit</button>
 </div>
 ```
 
@@ -14,7 +17,7 @@ body {
     overflow: hidden;
 }
 
-#password {
+#password-display {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -25,12 +28,12 @@ body {
     justify-content: center;
 }
 
-#password>* {
+#password-display>* {
     padding: 7px;
     margin: 5px;
 }
 
-#password input {
+#password-display input {
     width: 200px;
 }
 ```
@@ -38,18 +41,18 @@ body {
 ## JavaScript
 
 ``` javascript
-var devPass = localStorage.getItem('dev') ? localStorage.getItem('dev') : 'no';
+var devPass = localStorage.getItem('has_access') ? localStorage.getItem('has_access') : 'no';
 
-if (localStorage.getItem('dev') == 'yes') {
-    document.getElementById('password').style.display = "none"
+if (localStorage.getItem('has_access') == 'yes') {
+    document.getElementById('password-display').style.display = "none"
     document.body.style.overflow = 'auto'
 }
 
 function passwordSubmit() {
-    if (document.getElementById('password-text').value == "YOUR_PASSWORD" && !localStorage.getItem('dev')) {
-        document.getElementById('password').style.display = "none"
+    if (document.getElementById('password').value == "YOUR_PASSWORD" && !localStorage.getItem('has_access')) {
+        document.getElementById('password-display').style.display = "none"
         document.body.style.overflow = 'auto'
-        localStorage.setItem('dev', 'yes');
+        localStorage.setItem('has_access', 'yes');
     }
 }
 ```
