@@ -1,11 +1,15 @@
-```html
+## HTML
+
+``` html
 <div id="password">
     <input id="password-text" type="text">
     <button id="password-btn" onclick="passwordSubmit()">Submit</button>
 </div>
 ```
 
-```css
+## CSS
+
+``` css
 body {
     overflow: hidden;
 }
@@ -18,8 +22,8 @@ body {
     z-index: 99;
     display: flex;
     align-items: center;
-    justify-content: center;        
-    }
+    justify-content: center;
+}
 
 #password>* {
     padding: 7px;
@@ -31,7 +35,9 @@ body {
 }
 ```
 
-```javascript
+## JavaScript
+
+``` javascript
 var devPass = localStorage.getItem('dev') ? localStorage.getItem('dev') : 'no';
 
 if (localStorage.getItem('dev') == 'yes') {
