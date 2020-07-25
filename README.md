@@ -38,6 +38,34 @@ body {
 }
 ```
 
+## or SCSS
+
+``` scss
+body {
+    overflow: hidden;
+}
+
+#password-display {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 99;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &>* {
+    padding: 7px;
+    margin: 5px;
+    }
+
+    input {
+    width: 200px;
+    }
+}
+```
+
 ## JavaScript
 
 ``` javascript
