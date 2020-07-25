@@ -41,7 +41,7 @@ body {
 ## JavaScript
 
 ``` javascript
-var devPass = localStorage.getItem('has_access') ? localStorage.getItem('has_access') : 'no';
+var hasAccess = localStorage.getItem('has_access') ? localStorage.getItem('has_access') : 'no';
 
 if (localStorage.getItem('has_access') == 'yes') {
     document.getElementById('password-display').style.display = "none"
