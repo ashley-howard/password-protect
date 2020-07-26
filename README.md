@@ -71,13 +71,13 @@ body {
 ``` javascript
 var hasAccess = localStorage.getItem('has_access') ? localStorage.getItem('has_access') : 'no';
 
-if (localStorage.getItem('has_access') == 'yes') {
+if (hasAccess == 'yes') {
     document.getElementById('password-display').style.display = "none"
     document.body.style.overflow = 'auto'
 }
 
 function passwordSubmit() {
-    if (document.getElementById('password').value == "YOUR_PASSWORD" && !localStorage.getItem('has_access')) {
+    if (document.getElementById('password').value == "YOUR_PASSWORD" && hasAccess == "no") {
         document.getElementById('password-display').style.display = "none"
         document.body.style.overflow = 'auto'
         localStorage.setItem('has_access', 'yes');
